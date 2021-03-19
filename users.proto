@@ -1,0 +1,19 @@
+syntax = "proto3";
+package users;
+option go_package = "github.com/amirex/microservice";
+
+message Person {
+  string  name = 1;
+}
+
+message RequestPerson{
+  int32 id = 1;
+}
+message ResponsePerson{
+  Person Person = 1;
+}
+
+
+service RouteGuide {
+  rpc GetPersonDetails(RequestPerson) returns (ResponsePerson) {}
+}
